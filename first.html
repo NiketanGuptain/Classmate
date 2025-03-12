@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classmate - Your College Companion</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #333;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color:#1E90FF; /* Dark blue */
+      color: white;
+      padding: 10px 20px;
+    }
+    .navbar img {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #1E90FF; /* Dark blue */
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      transition: left 0.3s;
+      padding-top: 60px;
+    }
+    .sidebar.open {
+      left: 0;
+    }
+    .sidebar .card {
+      padding: 15px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .sidebar .card:hover {
+      background-color: #1E90FF; /* Slightly lighter blue */
+    }
+    .main-content {
+      margin-left: 0;
+      padding: 20px;
+      transition: margin-left 0.3s;
+    }
+    .main-content.shifted {
+      margin-left: 250px;
+    }
+    .student-details {
+      background-color: #1E90FF; /* Blue */
+      border-radius: 10px;
+      padding: 20px;
+      color: white;
+      margin-bottom: 20px;
+    }
+    .student-details h2 {
+      margin-top: 0;
+    }
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+    .quick-actions .card {
+      background-color:#1E90FF; /* Blue */
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+      color: white;
+    }
+    .quick-actions .card:hover {
+      transform: scale(1.05);
+    }
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      background-color:  #1E90FF; /* Dark blue */
+      color: white;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .bottom-nav div {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <div class="navbar">
+    <img src="menu-icon.png" alt="Menu" onclick="toggleSidebar()">
+    <span>Classmate</span>
+    <img src="notification-icon.png" alt="Notifications">
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="card" onclick="location.href='#';">My Institution</div>
+    <div class="card" onclick="location.href='#';">Messages</div>
+    <div class="card" onclick="location.href='#';">Attendance</div>
+    <div class="card" onclick="location.href='#';">Exam Schedules</div>
+    <div class="card" onclick="location.href='#';">Reports</div>
+    <div class="card" onclick="location.href='#';">Progress Report</div>
+    <div class="card" onclick="location.href='#';">Holidays</div>
+    <div class="card" onclick="location.href='#';">Cafeteria</div>
+    <div class="card" onclick="location.href='#';">Timetable</div>
+    <div class="card" onclick="location.href='#';">Leave and Gate Pass</div>
+    <div class="card" onclick="location.href='#';">Services</div>
+    <div class="card" onclick="location.href='#';">Enrollment</div>
+    <div class="card" onclick="location.href='#';">Activity</div>
+    <div class="card" onclick="location.href='#';">Clearance</div>
+    <div class="card" onclick="location.href='#';">Announcement</div>
+    <div class="card" onclick="location.href='#';">Feedback</div>
+    <div class="card" onclick="location.href='#';">Project</div>
+    <div class="card" onclick="location.href='#';">E-Portfolio</div>
+    <div class="card" onclick="location.href='#';">Final Result</div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content" id="mainContent">
+    <!-- Student Details -->
+    <div class="student-details">
+      <h2>Student Details</h2>
+      <p><strong>Name:</strong>Akshat Bansal</p>
+      <p><strong>Student ID:</strong>E23CSEU1038</p>
+      <p><strong>Program:</strong> B.Tech (Computer Science)</p>
+      <p><strong>Year:</strong> 2nd</p>
+      <p><strong>Email:</strong> e23cseu1038@bennett.edu.in</p>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <div class="card" onclick="location.href='#';">Attendance</div>
+      <div class="card" onclick="location.href='#';">Timetable</div>
+      <div class="card" onclick="location.href='#';">Messages</div>
+      <div class="card" onclick="location.href='#';">Results</div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation Bar -->
+  <div class="bottom-nav">
+    <div>Home</div>
+    <div>Timetable</div>
+    <div>Messages</div>
+    <div>More</div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const mainContent = document.getElementById('mainContent');
+      sidebar.classList.toggle('open');
+      mainContent.classList.toggle('shifted');
+    }
+  </script>
+</body>
+</html>
